@@ -22,6 +22,8 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+      - name: Sleep for 30 seconds
+      - run: sleep 30s
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -31,5 +33,4 @@ jobs:
           cache-dependency-path: "./app-backend/package-lock.json"
       - run: npm ci
       - run: npm run build --if-present
-      - run: sudo pm2 start ./app.js --name=pool-appservice-backend-aws
-      - run: sudo pm2 restart pool-appservice-backend-aws
+      - run: "sudo pm2 delete pool-appservice-backend-aws || : && sudo pm2 start ./app.js --name=pool-appservice-backend-aws"
