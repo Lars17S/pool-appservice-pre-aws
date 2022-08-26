@@ -23,14 +23,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Sleep for 30 seconds
-      - run: sleep 30s
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: "./app-backend/package-lock.json"
+      - run: sleep 30s
       - run: npm ci
       - run: npm run build --if-present
       - run: "sudo pm2 delete pool-appservice-backend-aws || : && sudo pm2 start ./app.js --name=pool-appservice-backend-aws"
