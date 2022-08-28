@@ -4,13 +4,11 @@ import ServiceView from "./views/ServiceView";
 import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
 import HomepageView from "./views/HomepageView";
-import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <BrowserRouter>
       <>
-        <Navbar />
         <Routes>
           <Route path="/services" element={<ServiceListView />} />
           <Route path="/service/:id" element={<ServiceView />} />
