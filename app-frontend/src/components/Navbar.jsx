@@ -2,11 +2,11 @@ import { ShoppingCartOutlined } from "@mui/icons-material";
 import Badge from "@mui/material/Badge";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { mobails, tablet } from "../responsive";
+import { mobile, tablet } from "../responsive";
 
 const Container = styled.div`
   height: 60px;
-  ${mobails} {
+  ${mobile} {
     height: 50px;
   }
 `;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${mobails} {
+  ${mobile} {
     padding: 0px 5px;
   }
 `;
@@ -35,7 +35,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
-  ${mobails} {
+  ${mobile} {
     display: none;
   }
   ${tablet} {
@@ -48,7 +48,7 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  ${mobails} {
+  ${mobile} {
     justify-content: flex-start;
     flex: 4;
     transform: scale(0.8);
@@ -63,7 +63,7 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
-  ${mobails} {
+  ${mobile} {
     font-size: 10px;
     margin-left: 5px;
   }

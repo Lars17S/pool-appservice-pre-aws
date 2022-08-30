@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import CategoryItem from "./CategoryItem";
-import { mobails, tablet } from "../responsive";
+import { mobile, tablet } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   padding: 20px;
   justify-content: space-between;
-  ${mobails} {
+  ${mobile} {
     padding: 0;
     flex-direction: column;
   }
@@ -21,13 +21,13 @@ export const categories = [
     id: 1,
     img: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2021/07/featured-image-pool-house.jpeg.jpg",
     title: "Albercas",
-    cat: "services",
+    category: "installation-package",
   },
   {
     id: 2,
     img: "https://www.cleansweepofamerica.com/wp-content/uploads/2020/10/office-cleaning-service.jpeg",
     title: "Mantenimiento",
-    cat: "services",
+    category: "maintenance",
   },
 ];
 
@@ -38,7 +38,7 @@ const Categories = () => {
         <CategoryItem
           img={item.img}
           title={item.title}
-          cat={item.cat}
+          category={item.category}
           key={item.id}
         />
       ))}

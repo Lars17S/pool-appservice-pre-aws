@@ -12,7 +12,11 @@ const Container = styled.div`
 `;
 
 const Announcement = () => {
-  return <Container>Super Deal Free shipping on orders over 50</Container>;
+  return (
+    <Container>
+      Todos los paquetes de instalación de albercas con 10% OFF.
+    </Container>
+  );
 };
 
 export default Announcement;

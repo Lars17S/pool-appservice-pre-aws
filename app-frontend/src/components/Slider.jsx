@@ -1,7 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 import { useState } from "react";
 import styled from "styled-components";
-import { mobails, tablet } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
@@ -10,7 +10,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  ${mobails} {
+  ${mobile} {
     display: none;
   }
 `;
@@ -91,7 +91,7 @@ export const sliderItems = [
     img: "https://i.pinimg.com/originals/ff/51/64/ff5164c8eda18c9beea4079b09694934.jpg",
     desc: "Tenemos los paquetes de instalación hechos para ti.",
     bg: "f5fafd",
-    cat: "service",
+    cat: "installation-package",
   },
   {
     id: 2,
@@ -99,23 +99,24 @@ export const sliderItems = [
     img: "https://5.imimg.com/data5/SELLER/Default/2021/2/BJ/IH/AG/33886061/swimming-pool-maintenance-service.jpeg",
     desc: "Ofrecemos servicio de mantenimiento en todo CDMX.",
     bg: "fcf1ed",
-    cat: "service",
+    cat: "maintenance",
   },
 ];
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
-  // TODO: Hard coded. This must be changed and read length from data array.
+  const rightLimit = 1;
+  const leftLimit = 0;
   const handleClick = (direction) => {
     if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 1);
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : rightLimit);
     } else {
-      setSlideIndex(slideIndex < 1 ? slideIndex + 1 : 0);
+      setSlideIndex(slideIndex < 1 ? slideIndex + 1 : leftLimit);
     }
   };
   let navigate = useNavigate();
   const routeChange = (path) => {
-    navigate("/products", { state: path });
+    navigate("/services", { state: path });
   };
 
   return (
