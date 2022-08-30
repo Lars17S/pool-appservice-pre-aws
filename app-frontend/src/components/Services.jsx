@@ -23,7 +23,11 @@ const Services = ({ filters, sort }) => {
     const getServices = async () => {
       try {
         const res = await axios.get(
-          `${process.env.BACKEND_URL}/api/services?${searchParams.toString()}`
+          `${
+            process.env.REACT_APP_BACKEND_URL !== undefined
+              ? process.env.REACT_APP_BACKEND_URL
+              : "http://localhost:5000"
+          }/api/services?${searchParams.toString()}`
         );
         setServices(res.data);
       } catch (err) {}
