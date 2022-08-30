@@ -2,7 +2,7 @@ import Announcement from "../components/Announcement";
 import Navbar from "../components/Navbar";
 import Categories from "../components/Categories";
 import Footer from "../components/Footer";
-// import Services from "../components/Services";
+import Services from "../components/Services";
 import Slider from "../components/Slider";
 
 const HomepageView = () => {
@@ -12,7 +12,7 @@ const HomepageView = () => {
       <Announcement />
       <Slider />
       <Categories />
-      {/* <Services filters={{}} sort={""} /> */}
+      <Services filters={{}} sort={""} />
       <Footer />
     </div>
   );

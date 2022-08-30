@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { mobails, tablet } from "../responsive";
+import { mobile, tablet } from "../responsive";
 
 const Container = styled.div`
   flex: 1;
@@ -12,7 +12,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  ${mobails} {
+  ${mobile} {
     height: 35vh;
   }
   ${tablet} {
@@ -43,17 +43,17 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
-const CategoryItem = ({ img, title, cat }) => {
+const CategoryItem = ({ img, title, category }) => {
   let navigate = useNavigate();
-  const routeChange = (type) => {
-    navigate("/products", { state: type });
+  const routeChange = (category) => {
+    navigate("/services", { state: category });
   };
   return (
     <Container>
       <Image src={img} />
       <Info>
         <Title>{title}</Title>
-        <Button onClick={() => routeChange(cat)}>Solicitar</Button>
+        <Button onClick={() => routeChange(category)}>Solicitar</Button>
       </Info>
     </Container>
   );

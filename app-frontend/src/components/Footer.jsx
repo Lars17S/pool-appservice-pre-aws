@@ -9,12 +9,12 @@ import {
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { mobails, tablet } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import Button from "@mui/material/Button";
 
 const Container = styled.div`
   display: flex;
-  ${mobails} {
+  ${mobile} {
     flex-direction: column;
     width: 100%;
   }
@@ -50,7 +50,7 @@ const SoacialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
-  ${mobails} {
+  ${mobile} {
     display: none;
   }
 `;
@@ -74,7 +74,7 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
-  ${mobails} {
+  ${mobile} {
     background-color: #eee;
   }
 `;
@@ -148,7 +148,7 @@ const Footer = () => {
             <Button
               variant="text"
               onClick={() => {
-                navigate("/products", { state: "pc-parts" });
+                navigate("/services", { state: "pc-parts" });
               }}
             >
               Servicios
