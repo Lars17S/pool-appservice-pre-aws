@@ -84,10 +84,10 @@ const LoginView = () => {
   const handleGoogleLogin = (e) => {
     e.preventDefault();
     window.open(
-      `${
-        process.env.REACT_APP_BACKEND_URL !== undefined
-          ? process.env.REACT_APP_BACKEND_URL
-          : "http://localhost:5000"
+      `http://localhost:${
+        process.env.REACT_APP_EXPRESS_PORT !== undefined
+          ? process.env.REACT_APP_EXPRESS_PORT
+          : "5000"
       }/api/auth/google`,
       "_self"
     );
