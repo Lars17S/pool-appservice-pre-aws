@@ -167,7 +167,8 @@ const Footer = () => {
         </ContactItem>
         <ContactItem>
           {" "}
-          <Email style={{ marginRight: "10px" }} /> gamerStore@gmail.com
+          <Email style={{ marginRight: "10px" }} />
+          pool.app.service@gmail.com
         </ContactItem>
 
         <Payment src="https://www.pngitem.com/pimgs/m/47-479964_accepted-payment-types-payment-types-hd-png-download.png" />

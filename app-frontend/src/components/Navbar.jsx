@@ -92,13 +92,6 @@ const Navbar = () => {
               <MenuItem>SIGN IN</MenuItem>
             </Link>
           </>
-          <Link to="/cart">
-            <MenuItem>
-              <Badge badgeContent={0} color="primary">
-                <ShoppingCartOutlined />
-              </Badge>
-            </MenuItem>
-          </Link>
         </Right>
       </Wrapper>
     </Container>
