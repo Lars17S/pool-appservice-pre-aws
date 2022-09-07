@@ -85,9 +85,7 @@ const LoginView = () => {
     e.preventDefault();
     window.open(
       `http://localhost:${
-        process.env.REACT_APP_EXPRESS_PORT !== undefined
-          ? process.env.REACT_APP_EXPRESS_PORT
-          : "5000"
+        process.env.REACT_APP_EXPRESS_PORT || "5000"
       }/api/auth/google`,
       "_self"
     );
