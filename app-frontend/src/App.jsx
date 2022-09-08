@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ServiceListView from "./views/ServiceListView";
 import ServiceView from "./views/ServiceView";
@@ -7,7 +7,7 @@ import RegisterView from "./views/RegisterView";
 import HomepageView from "./views/HomepageView";
 
 const App = () => {
-  const user = useSelector((state) => state.user.currentUser);
+  // const user = useSelector((state) => state.user.currentUser);
   return (
     <BrowserRouter>
       <>

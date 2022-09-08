@@ -1,5 +1,3 @@
-import { ShoppingCartOutlined } from "@mui/icons-material";
-import Badge from "@mui/material/Badge";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile, tablet } from "../responsive";
