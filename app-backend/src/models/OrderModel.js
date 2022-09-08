@@ -1,23 +1,18 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
+const { Schema, model } = mongoose;
 
-const CartSchema = new Schema()(
+const OrderSchema = new Schema(
   {
     userId: { type: String, required: true },
-    products: [
-      {
-        productId: {
-          type: String,
-        },
-        quantity: {
-          type: Number,
-          default: 1,
-        },
-      },
-    ],
+    serviceId: { type: String, required: true },
+    dateScheduled: { type: Date, required: true },
+    phoneNumber: { type: String, required: true },
+    address: { type: Object, required: true },
+    status: { type: String, default: "pending" },
   },
   { timestamps: true }
 );
 
-const CartModel = model("Cart", CartSchema);
+const OrderModel = model("Order", OrderSchema);
 
-export default CartModel;
+export default OrderModel;
