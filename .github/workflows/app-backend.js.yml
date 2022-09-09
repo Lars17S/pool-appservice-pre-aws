@@ -31,4 +31,4 @@ jobs:
           cache-dependency-path: "./app-backend/package-lock.json"
       - run: npm ci
       - run: npm run build --if-present
-      - run: "sudo pm2 delete pool-appservice-backend-aws || : && sudo pm2 start node -- ./app.js --name=pool-appservice-backend-aws"
+      - run: "sudo pm2 delete pool-appservice-backend-aws || : && sudo pm2 start node -- ./src/index.js --name=pool-appservice-backend-aws"
