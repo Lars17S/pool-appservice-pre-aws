@@ -21,10 +21,10 @@ userRouter.put("/:id", async (req, res) => {
       { new: true }
     );
     res.status(200).json({
-      username: updatedUser?.username,
-      email: updatedUser?.email,
-      isAdmin: updatedUser?.isAdmin,
-      id: updatedUser?._id,
+      username: updatedUser.username,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+      id: updatedUser._id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -46,10 +46,10 @@ userRouter.get("/find/:id", async (req, res) => {
   try {
     const user = await UserModel.findById(req.params.id);
     res.status(200).json({
-      username: user?.username,
-      email: user?.email,
-      isAdmin: user?.isAdmin,
-      id: user?._id,
+      username: user.username,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      id: user._id,
     });
   } catch (err) {
     res.status(500).json(err);

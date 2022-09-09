@@ -41,18 +41,18 @@ authRouter.post("/login", async (req, res) => {
 
     const accessToken = jwt.sign(
       {
-        id: user?._id,
-        isAdmin: user?.isAdmin,
+        id: user._id,
+        isAdmin: user.isAdmin,
       },
       process.env.JWT_SECRET,
       { expiresIn: "3d" }
     );
     res.status(200).json({
-      username: user?.username,
-      email: user?.email,
-      isAdmin: user?.isAdmin,
+      username: user.username,
+      email: user.email,
+      isAdmin: user.isAdmin,
       accessToken: accessToken,
-      id: user?._id,
+      id: user._id,
     });
   } catch (error) {
     // res.status(500).json(error);
