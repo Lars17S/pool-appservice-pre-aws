@@ -12,6 +12,7 @@ const HomepageView = () => {
       <Announcement />
       <Slider />
       <Categories />
+
       <Services filters={{}} sort={""} />
       <Footer />
     </div>
