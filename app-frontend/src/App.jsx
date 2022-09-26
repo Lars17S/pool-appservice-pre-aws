@@ -5,48 +5,25 @@ import ServiceView from "./views/ServiceView";
 import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
 import HomepageView from "./views/HomepageView";
-import ChatBot from "react-simple-chatbot";
+import React, { useState } from "react";
+import Chatbot from "react-chatbot-kit";
+import { ConditionallyRender } from "react-util-kit";
+import { ReactComponent as ButtonIcon } from "./chatbot/icons/robot.svg";
+import "react-chatbot-kit/build/main.css";
+import "./App.css";
 
-// all available config props
-const config = {
-  width: "400px",
-  height: "500px",
-  floating: true,
-};
+import ActionProvider from "./chatbot/ActionProvider";
+import MessageParser from "./chatbot/MessageParser";
+import config from "./chatbot/config";
+
 
 const App = () => {
   // const user = useSelector((state) => state.user.currentUser);
+  const [showChatbot, toggleChatbot] = useState(true);
   return (
     <BrowserRouter>
       <>
-        <ChatBot
-          steps={[
-            {
-              id: "1",
-              message: "What number I am thinking?",
-              trigger: "2",
-            },
-            {
-              id: "2",
-              options: [
-                { value: 1, label: "Number 1", trigger: "4" },
-                { value: 2, label: "Number 2", trigger: "3" },
-                { value: 3, label: "Number 3", trigger: "3" },
-              ],
-            },
-            {
-              id: "3",
-              message: "Wrong answer, try again.",
-              trigger: "2",
-            },
-            {
-              id: "4",
-              message: "Awesome! You are a telepath!",
-              end: true,
-            },
-          ]}
-          {...config}
-        />
+      
         <Routes>
           <Route path="/services" element={<ServiceListView />} />
           <Route path="/service/:id" element={<ServiceView />} />
@@ -54,7 +31,27 @@ const App = () => {
           <Route path="/register" element={<RegisterView />} />
           <Route path="/" element={<HomepageView />} />
         </Routes>
+        
       </>
+      <div className="app-chatbot-container">
+          <ConditionallyRender
+            ifTrue={showChatbot}
+            show={
+              <Chatbot
+                config={config}
+                messageParser={MessageParser}
+                actionProvider={ActionProvider}
+              />
+            }
+          />
+        </div>
+
+        <button
+          className="app-chatbot-button"
+          onClick={() => toggleChatbot((prev) => !prev)}
+        >
+          <ButtonIcon className="app-chatbot-button-icon" />
+        </button>
     </BrowserRouter>
   );
 };
